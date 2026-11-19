@@ -1,4 +1,4 @@
-package View;
+package view.helpers;
 
 /** Notifications the presenter can send to the window. */
 public interface IView {

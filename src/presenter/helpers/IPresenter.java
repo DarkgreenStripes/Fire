@@ -1,4 +1,4 @@
-package Presenter;
+package presenter.helpers;
 
 /** Actions the view can request from the presenter. */
 public interface IPresenter {

@@ -1,7 +1,8 @@
-package Presenter;
+package presenter.core;
 
-import Model.IModel;
-import View.IView;
+import model.helpers.IModel;
+import presenter.helpers.IPresenter;
+import view.helpers.IView;
 
 /** Connects the simulation model to the window. */
 public class MyPresenter implements IPresenter {

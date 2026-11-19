@@ -1,4 +1,4 @@
-package Model;
+package model.core;
 
 import java.awt.Canvas;
 import java.awt.Graphics;

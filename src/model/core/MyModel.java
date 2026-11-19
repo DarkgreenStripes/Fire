@@ -1,8 +1,10 @@
-package Model;
+package model.core;
 
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import javax.swing.Timer;
+import model.helpers.ColorTargetsDTO;
+import model.helpers.IModel;
 
 /** Coordinates the fire simulation, its palette, and the rendered image. */
 public class MyModel implements IModel {

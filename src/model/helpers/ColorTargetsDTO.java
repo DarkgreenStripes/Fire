@@ -1,4 +1,4 @@
-package Model;
+package model.helpers;
 
 import java.awt.Color;
 import java.util.HashMap;

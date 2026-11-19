@@ -1,4 +1,4 @@
-package Model;
+package model.core;
 
 /** Simulates a fire using one temperature value for each matrix cell. */
 public class Fire {

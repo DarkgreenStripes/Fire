@@ -1,13 +1,13 @@
-package View;
-
-import Model.MyModel;
-import Presenter.MyPresenter;
+package view.core;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import model.core.MyModel;
+import presenter.core.MyPresenter;
+import view.helpers.IView;
 
 /** Window that displays the rendered fire. */
 public class MyView extends JFrame implements IView {

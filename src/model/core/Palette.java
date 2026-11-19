@@ -1,7 +1,8 @@
-package Model;
+package model.core;
 
 import java.awt.Color;
 import java.util.Map;
+import model.helpers.ColorTargetsDTO;
 
 /**
  * Builds a lookup table that maps each supported temperature to a color.

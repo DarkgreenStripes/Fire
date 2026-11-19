@@ -1,6 +1,7 @@
-import Model.MyModel;
-import Presenter.MyPresenter;
-import View.MyView;
+package main;
+import model.core.MyModel;
+import presenter.core.MyPresenter;
+import view.core.MyView;
 
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;

@@ -1,40 +1,42 @@
 package view.core;
 
 import java.awt.BorderLayout;
+import java.awt.Canvas;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import model.core.MyModel;
-import presenter.core.MyPresenter;
 import view.helpers.IView;
 
 /** Window that displays the rendered fire. */
 public class MyView extends JFrame implements IView {
     private static final int VIEW_WIDTH = 600;
     private static final int VIEW_HEIGHT = 400;
+    private Canvas renderCanvas;
 
-    public MyView(MyModel model, MyPresenter presenter) {
-        if (model == null || presenter == null) {
-            throw new IllegalArgumentException("Model and presenter cannot be null.");
-        }
-
+    public MyView() {
         setTitle("Simulación de fuego");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        add(new ViewerPanel(model.getRender(), VIEW_WIDTH, VIEW_HEIGHT), BorderLayout.CENTER);
         setPreferredSize(new Dimension(VIEW_WIDTH, VIEW_HEIGHT));
-        pack();
         setLocationByPlatform(true);
-        presenter.setView(this);
     }
 
+    @Override 
     public void showWindow() {
-        if (SwingUtilities.isEventDispatchThread()) {
-            setVisible(true);
-        } else {
-            SwingUtilities.invokeLater(() -> setVisible(true));
+        if (renderCanvas == null)
+            throw new IllegalStateException("Canvas no asignado. Llama setRenderCanvas antes.");
+        setVisible(true);
+    }
+
+    @Override 
+    public void setRenderCanvas (Canvas renderCanvas) {
+        if (renderCanvas == null) {
+            throw new IllegalArgumentException("Render canvas not found.");
         }
+        this.renderCanvas = renderCanvas;
+        add(new ViewerPanel(renderCanvas, VIEW_WIDTH, VIEW_HEIGHT), BorderLayout.CENTER);
+        pack();
     }
 
     @Override

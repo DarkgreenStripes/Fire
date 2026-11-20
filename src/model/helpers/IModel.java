@@ -1,5 +1,6 @@
 package model.helpers;
 
+import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 
@@ -14,4 +15,6 @@ public interface IModel {
     void play();
 
     void stop();
+
+    public Canvas getRender();
 }

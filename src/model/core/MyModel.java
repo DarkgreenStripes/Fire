@@ -54,6 +54,7 @@ public class MyModel implements IModel {
         timer.stop();
     }
 
+    @Override
     public Render getRender() {
         return render;
     }

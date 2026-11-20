@@ -9,11 +9,15 @@ public class MyPresenter implements IPresenter {
     private final IModel model;
     private IView view;
 
-    public MyPresenter(IModel model) {
+    public MyPresenter(IModel model, IView view) {
         if (model == null) {
             throw new IllegalArgumentException("Model cannot be null.");
         }
         this.model = model;
+        
+        view.setRenderCanvas(model.getRender());
+        setView(view);
+        view.showWindow();
     }
 
     public void setView(IView view) {

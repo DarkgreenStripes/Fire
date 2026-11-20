@@ -1,19 +1,16 @@
 package main;
-import model.core.MyModel;
-import presenter.core.MyPresenter;
-import view.core.MyView;
-
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;
+import model.core.MyModel;
+import model.core.Render;
+import presenter.core.MyPresenter;
+import view.core.MyView;
 
 /** Starts the fire simulation window. */
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            MyModel model = new MyModel(new Dimension(120, 80));
-            MyPresenter presenter = new MyPresenter(model);
-            MyView view = new MyView(model, presenter);
-            view.showWindow();
+            MyPresenter presenter = new MyPresenter(new MyModel(new Dimension(120, 80)), new MyView());
             presenter.play();
         });
     }

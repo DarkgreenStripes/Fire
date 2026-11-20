@@ -2,7 +2,6 @@ package main;
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;
 import model.core.MyModel;
-import model.core.Render;
 import presenter.core.MyPresenter;
 import view.core.MyView;
 

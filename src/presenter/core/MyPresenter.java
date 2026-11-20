@@ -16,16 +16,7 @@ public class MyPresenter implements IPresenter {
         this.model = model;
         
         view.setRenderCanvas(model.getRender());
-        setView(view);
         view.showWindow();
-    }
-
-    public void setView(IView view) {
-        if (view == null) {
-            throw new IllegalArgumentException("View cannot be null.");
-        }
-        this.view = view;
-        getFrame();
     }
 
     @Override
@@ -36,13 +27,6 @@ public class MyPresenter implements IPresenter {
     @Override
     public void stop() {
         runModelAction(model::stop);
-    }
-
-    @Override
-    public void getFrame() {
-        if (view != null) {
-            view.showFrame();
-        }
     }
 
     @Override

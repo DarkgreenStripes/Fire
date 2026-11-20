@@ -6,7 +6,5 @@ public interface IPresenter {
 
     void stop();
 
-    void getFrame();
-
     void showError(String message);
 }

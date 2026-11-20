@@ -22,7 +22,7 @@ public class MyModel implements IModel {
     }
 
     @Override
-    public void setDimension(Dimension dimension) {
+    public final void setDimension(Dimension dimension) {
         if (dimension == null || dimension.width <= 0 || dimension.height <= 0) {
             throw new IllegalArgumentException("Fire dimensions must be positive.");
         }
